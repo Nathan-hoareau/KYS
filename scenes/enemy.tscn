@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck3f82a4xekro"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_viv23"]
+[ext_resource type="PackedScene" uid="uid://cj5piqnpul7eh" path="res://scenes/dragon.tscn" id="2_65bdx"]
+[ext_resource type="PackedScene" uid="uid://c1p4o7i44nsb3" path="res://scenes/slime.tscn" id="3_bqcid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx8m1"]
+size = Vector2(16, 16)
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_viv23")
+
+[node name="Dragon" parent="." instance=ExtResource("2_65bdx")]
+visible = false
+
+[node name="Slime" parent="." instance=ExtResource("3_bqcid")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sx8m1")
