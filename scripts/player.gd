@@ -4,6 +4,12 @@ extends CharacterBody2D
 #@export var pos = Vector2
 @onready var _animatedSprite = $Sprite2D
 
+signal gainedHealth
+signal reduceHealth
+
+var maxHealth = 100
+var currentHealth = 50
+
 func _ready():
 	scale = Vector2(.25, .25)
 	_animatedSprite.play('idle')
@@ -20,7 +26,12 @@ func _process(delta):
 		direction.x += 1
 	elif Input.is_action_pressed('ui_left'):
 		direction.x -= 1
-
+	elif Input.is_action_just_pressed('ui_accept'):
+		currentHealth += 5
+		gainedHealth.emit()
+	elif Input.is_action_just_pressed('ui_cancel'):
+		currentHealth -= 1
+		reduceHealth.emit()
 	direction = direction.normalized() * (delta + .5)
 	move_and_collide(direction)
 #const SPEED = 300.0
