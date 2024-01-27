@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cv3b0t52tdko8"]
+
+[ext_resource type="Texture2D" uid="uid://hukxxu5pwkh4" path="res://assets/luffy.png" id="1_clemh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el5j8"]
+atlas = ExtResource("1_clemh")
+region = Rect2(0, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bay5"]
+atlas = ExtResource("1_clemh")
+region = Rect2(39, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7cfb"]
+atlas = ExtResource("1_clemh")
+region = Rect2(78, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikped"]
+atlas = ExtResource("1_clemh")
+region = Rect2(117, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwqet"]
+atlas = ExtResource("1_clemh")
+region = Rect2(156, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x5v1"]
+atlas = ExtResource("1_clemh")
+region = Rect2(195, 0, 39, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aesw"]
+atlas = ExtResource("1_clemh")
+region = Rect2(234, 0, 39, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eyf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el5j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bay5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7cfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikped")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwqet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x5v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aesw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Luffy" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1eyf5")
+frame_progress = 0.121017

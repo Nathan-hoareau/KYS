@@ -1,0 +1,11 @@
+~ start
+
+Jake: Où trouver un pirate qui a perdu ses jambes de bois ?
+- Avec les requins.
+	Pirate: Tu peux trouver mieux.
+	set point = -10
+- Là où vous l'avez laissé.
+	Pirate: HAHAHARRR !
+	set point = 10
+
+=> END
