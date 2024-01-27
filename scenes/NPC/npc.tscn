@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://d27kxerbkcnnm"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_6a080"]
+[ext_resource type="PackedScene" uid="uid://dimdo4vu0ugvg" path="res://scenes/NPC/rick.tscn" id="2_0reli"]
+[ext_resource type="PackedScene" uid="uid://cxjs60aslsxj2" path="res://scenes/NPC/bob.tscn" id="2_db0ob"]
+[ext_resource type="PackedScene" uid="uid://cv3b0t52tdko8" path="res://scenes/NPC/luffy.tscn" id="4_mpgei"]
+[ext_resource type="PackedScene" uid="uid://dq6ynxd78s4yn" path="res://scenes/actionable.tscn" id="4_slsr0"]
+[ext_resource type="PackedScene" uid="uid://bucorv8vjxgoa" path="res://scenes/NPC/pirate.tscn" id="5_rtfx3"]
+[ext_resource type="PackedScene" uid="uid://54oks8qsdwu8" path="res://scenes/NPC/gumball.tscn" id="6_d2msw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l53ae"]
+size = Vector2(29, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oxq01"]
+
+[node name="Npc" type="CharacterBody2D"]
+script = ExtResource("1_6a080")
+
+[node name="Rick" parent="." instance=ExtResource("2_0reli")]
+visible = false
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.224, 0.197531)
+
+[node name="Bob" parent="." instance=ExtResource("2_db0ob")]
+visible = false
+
+[node name="Luffy" parent="." instance=ExtResource("4_mpgei")]
+visible = false
+
+[node name="Pirate" parent="." instance=ExtResource("5_rtfx3")]
+visible = false
+position = Vector2(1.58791e-06, 0)
+scale = Vector2(0.291262, 0.301887)
+
+[node name="Gumball" parent="." instance=ExtResource("6_d2msw")]
+visible = false
+position = Vector2(10.5, 0)
+scale = Vector2(0.376923, 0.329897)
+frame = 1
+frame_progress = 0.97969
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l53ae")
+
+[node name="Actionable" parent="." instance=ExtResource("4_slsr0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_oxq01")

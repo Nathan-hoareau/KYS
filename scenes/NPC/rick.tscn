@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dimdo4vu0ugvg"]
+
+[ext_resource type="Texture2D" uid="uid://dahchlfb6nhqf" path="res://assets/rickmorty.png" id="1_bksan"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eym2"]
+atlas = ExtResource("1_bksan")
+region = Rect2(0, 0, 125, 162)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0bdo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eym2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Rick" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_d0bdo")
+frame_progress = 0.642025
