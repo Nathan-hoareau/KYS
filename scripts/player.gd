@@ -5,23 +5,23 @@ extends CharacterBody2D
 @onready var _animatedSprite = $Sprite2D
 
 func _ready():
-	_animatedSprite.scale = Vector2(.25, .25)
+	scale = Vector2(.25, .25)
 	_animatedSprite.play('idle')
 #	$Sprite2D.position = pos
 
-func _process(_delta):
+func _process(delta):
 	var direction = Vector2.ZERO
 
-	if Input.is_action_just_pressed('ui_up'):
+	if Input.is_action_pressed('ui_up'):
 		direction.y -= 1
-	elif Input.is_action_just_pressed('ui_down'):
+	elif Input.is_action_pressed('ui_down'):
 		direction.y += 1
-	elif Input.is_action_just_pressed('ui_right'):
+	elif Input.is_action_pressed('ui_right'):
 		direction.x += 1
-	elif Input.is_action_just_pressed('ui_left'):
+	elif Input.is_action_pressed('ui_left'):
 		direction.x -= 1
 
-	direction = direction.normalized() * 16
+	direction = direction.normalized() * (delta + .5)
 	move_and_collide(direction)
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
