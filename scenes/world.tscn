@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c43iatmek84wi"]
+[gd_scene load_steps=6 format=3 uid="uid://bulj7s80pf7fj"]
 
 [ext_resource type="PackedScene" path="res://scenes/gameplay.tscn" id="1_krtrf"]
 [ext_resource type="PackedScene" uid="uid://dygjlmh25mdmm" path="res://scenes/player.tscn" id="2_3pl1e"]
 [ext_resource type="PackedScene" uid="uid://ck3f82a4xekro" path="res://scenes/enemy.tscn" id="3_t7nar"]
+[ext_resource type="Script" path="res://scenes/ProgressBar.gd" id="3_4tb4a"]
+[ext_resource type="Texture2D" uid="uid://3crxvms27x2b" path="res://assets/laughter.png" id="4_xp3xi"]
+[ext_resource type="Texture2D" uid="uid://dnqfxmuabh54w" path="res://assets/moai.png" id="5_jcv1t"]
 
 [node name="World" type="Node2D"]
 
@@ -15,6 +18,7 @@ position = Vector2(475, 303)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(18, 8)
 zoom = Vector2(2, 2)
+
 
 [node name="enemy" parent="." instance=ExtResource("3_t7nar")]
 position = Vector2(224, 207)
@@ -31,3 +35,36 @@ type = "Dragon"
 [node name="enemy4" parent="." instance=ExtResource("3_t7nar")]
 position = Vector2(772, 53)
 type = "Dragon"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 17.0
+offset_right = 100.0
+offset_bottom = 44.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("3_4tb4a")
+player = NodePath("../../Player")
+
+[node name="laughter" type="TextureRect" parent="CanvasLayer"]
+offset_left = 684.0
+offset_top = 10.0
+offset_right = 723.0
+offset_bottom = 49.0
+texture = ExtResource("4_xp3xi")
+expand_mode = 1
+
+[node name="moai" type="TextureRect" parent="CanvasLayer"]
+offset_left = 431.0
+offset_top = 10.0
+offset_right = 470.0
+offset_bottom = 49.0
+texture = ExtResource("5_jcv1t")
+expand_mode = 1
