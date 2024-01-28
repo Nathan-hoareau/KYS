@@ -23,7 +23,6 @@ Answers="*res://scripts/answers.gd"
 [dialogue_manager]
 
 general/states=["Answers"]
-general/custom_test_scene_path="res://addons/dialogue_manager/test_scene.tscn"
 
 [dotnet]
 
