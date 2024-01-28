@@ -12,7 +12,6 @@ var maxHealth = 100
 var currentHealth = 50
 
 func _unhandled_input(_event: InputEvent) -> void:
-	pass
 	# Only the balloon is allowed to handle input while it's showing
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
@@ -53,7 +52,7 @@ func _process(delta):
 	Answers.point = 0
 	if direction.x == 0 and direction.y == 0:
 		_animatedSprite.play("idle")
-	direction = direction.normalized() * (delta + 1)
+	direction = direction.normalized() * (delta + 0.65)
 	move_and_collide(direction)
 
 func _on_hitbox_body_entered(_body):
