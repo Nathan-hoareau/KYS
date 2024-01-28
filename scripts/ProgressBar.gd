@@ -8,7 +8,7 @@ func _ready():
 	player.gainedHealth.connect(update)
 	player.reduceHealth.connect(update)
 	add_theme_stylebox_override("fill", sb)
-	pass # Replace with function body.
+	value = 50
 
 func update():
 	value = player.currentHealth
@@ -20,7 +20,3 @@ func update():
 		sb.bg_color = Color("ff0000")
 	if value < 15:
 		sb.bg_color = Color("000000")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass

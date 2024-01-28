@@ -24,9 +24,15 @@ func _ready():
 	gainedHealth.emit()
 	scale = Vector2(.25, .25)
 	_animatedSprite.play('idle')
-#	$Sprite2D.position = pos
 
 func _process(delta):
+	
+	if currentHealth <= 0:
+		get_tree().change_scene_to_file("res://scenes/gameOver.tscn")
+		
+	if currentHealth >= 100:
+		get_tree().change_scene_to_file("res://scenes/youWin.tscn")
+	
 	var direction = Vector2.ZERO
 
 	if Input.is_action_pressed('ui_up'):
@@ -37,15 +43,26 @@ func _process(delta):
 		direction.x += 1
 	elif Input.is_action_pressed('ui_left'):
 		direction.x -= 1
-#	elif Input.is_action_just_pressed('ui_accept'):
-#		currentHealth += 5
-#		gainedHealth.emit()
-#	elif Input.is_action_just_pressed('ui_cancel'):
-#		currentHealth -= 1
-#		reduceHealth.emit()
 
 	currentHealth += Answers.point
 	gainedHealth.emit()
 	Answers.point = 0
 	direction = direction.normalized() * (delta + .5)
 	move_and_collide(direction)
+
+func _on_hitbox_body_entered(_body):
+	print("enemy in box, starting timer")
+	$Timer.start()
+	pass # Replace with function body.
+
+func _on_hitbox_body_exited(_body):
+	print("enemy exited, stopping timer")
+	$Timer.stop()
+	pass # Replace with function body.
+
+func _on_timer_timeout():
+	print("timer timeout")
+	currentHealth -= 10
+	reduceHealth.emit()
+	pass # Replace with function body.
+
