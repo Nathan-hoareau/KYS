@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c86kww45dfn2i"
+path="res://.godot/imported/gumball.dialogue-9976d5ed1b21b5dea2593a671ca9dcc6.tres"
+
+[deps]
+
+source_file="res://dialogue/gumball.dialogue"
+dest_files=["res://.godot/imported/gumball.dialogue-9976d5ed1b21b5dea2593a671ca9dcc6.tres"]
+
+[params]
+
+defaults=true

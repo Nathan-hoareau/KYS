@@ -1,0 +1,11 @@
+~ start
+
+Jake: Qu'est ce qu'un steak qui n'est pas un steak ?
+- Une pastèque.
+	Luffy: Une pastèque, Oh non, je préfère un bon gros steak !
+	set point = 10
+- (!steak).
+	Luffy: Pas compris ?
+	set point = -10
+
+=> END

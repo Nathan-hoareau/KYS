@@ -1,0 +1,11 @@
+~ start
+
+Jake: Tu as 3 poussins, tu en veux 2, comment fais-tu ?
+- T'en pousse un.
+	Bob: exellent !
+	set point = 10
+- Tu en fais des nuggets.
+	Bob: Tu en as d'autres des blagues nuls.
+	set point = -10
+
+=> END

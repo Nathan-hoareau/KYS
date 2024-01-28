@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://54oks8qsdwu8"]
+
+[ext_resource type="Texture2D" uid="uid://bgbxmd1p3jlkh" path="res://assets/gumb.png" id="1_e2upt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqw0n"]
+atlas = ExtResource("1_e2upt")
+region = Rect2(0, 0, 130, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmqsb"]
+atlas = ExtResource("1_e2upt")
+region = Rect2(130, 0, 130, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibnpu"]
+atlas = ExtResource("1_e2upt")
+region = Rect2(260, 0, 130, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bivgn"]
+atlas = ExtResource("1_e2upt")
+region = Rect2(390, 0, 130, 97)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jck64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqw0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmqsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibnpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bivgn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Gumball" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jck64")
+frame_progress = 0.709356
