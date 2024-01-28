@@ -8,7 +8,7 @@ func _ready():
 	player.gainedHealth.connect(update)
 	player.reduceHealth.connect(update)
 	add_theme_stylebox_override("fill", sb)
-	pass # Replace with function body.
+	value = 50
 
 func update():
 	value = player.currentHealth

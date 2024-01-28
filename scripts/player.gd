@@ -13,9 +13,15 @@ var currentHealth = 50
 func _ready():
 	scale = Vector2(.25, .25)
 	_animatedSprite.play('idle')
-#	$Sprite2D.position = pos
 
 func _process(delta):
+	
+	if currentHealth <= 0:
+		get_tree().change_scene_to_file("res://scenes/gameOver.tscn")
+		
+	if currentHealth >= 100:
+		get_tree().change_scene_to_file("res://scenes/youWin.tscn")
+	
 	var direction = Vector2.ZERO
 
 	if Input.is_action_pressed('ui_up'):
@@ -29,14 +35,29 @@ func _process(delta):
 	elif Input.is_action_just_pressed('ui_accept'):
 		currentHealth += 5
 		gainedHealth.emit()
-	elif Input.is_action_just_pressed('ui_cancel'):
-		currentHealth -= 1
+	elif Input.is_action_just_pressed('ui_text_backspace'):
+		currentHealth -= 5
 		reduceHealth.emit()
 	direction = direction.normalized() * (delta + .5)
 	move_and_collide(direction)
-#const SPEED = 300.0
-#const JUMP_VELOCITY = -400.0
-#
+
+func _on_hitbox_body_entered(body):
+	print("enemy in box, starting timer")
+	$Timer.start()
+	pass # Replace with function body.
+
+func _on_hitbox_body_exited(body):
+	print("enemy exited, stopping timer")
+	$Timer.stop()
+	pass # Replace with function body.
+
+func _on_timer_timeout():
+	print("timer timeout")
+	currentHealth -= 10
+	reduceHealth.emit()
+	pass # Replace with function body.
+
+
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #
@@ -59,3 +80,7 @@ func _process(delta):
 #		velocity.x = move_toward(velocity.x, 0, SPEED)
 #
 #	move_and_slide()
+
+
+
+

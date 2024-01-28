@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dygjlmh25mdmm"]
+[gd_scene load_steps=12 format=3 uid="uid://dygjlmh25mdmm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_s33gq"]
 [ext_resource type="Texture2D" uid="uid://u0v524dq2omc" path="res://assets/jake_sprite.png" id="2_811nh"]
@@ -56,9 +56,12 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oh77y"]
+radius = 98.5089
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(503, 243)
-collision_layer = 2
+collision_layer = 6
 collision_mask = 2
 script = ExtResource("1_s33gq")
 
@@ -70,3 +73,14 @@ sprite_frames = SubResource("SpriteFrames_mhofb")
 animation = &"idle"
 frame = 2
 frame_progress = 0.977228
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_oh77y")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
