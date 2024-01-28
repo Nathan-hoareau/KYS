@@ -37,31 +37,36 @@ func _process(delta):
 
 	if Input.is_action_pressed('ui_up'):
 		direction.y -= 1
+		_animatedSprite.play("walk_back")
 	elif Input.is_action_pressed('ui_down'):
 		direction.y += 1
+		_animatedSprite.play("walk_front")
 	elif Input.is_action_pressed('ui_right'):
 		direction.x += 1
+		_animatedSprite.play("walk_right")
 	elif Input.is_action_pressed('ui_left'):
 		direction.x -= 1
+		_animatedSprite.play("walk_left")
 
 	currentHealth += Answers.point
 	gainedHealth.emit()
 	Answers.point = 0
-	direction = direction.normalized() * (delta + .5)
+	if direction.x == 0 and direction.y == 0:
+		_animatedSprite.play("idle")
+	direction = direction.normalized() * (delta + 1)
 	move_and_collide(direction)
 
 func _on_hitbox_body_entered(_body):
-	print("enemy in box, starting timer")
+	currentHealth -= 10
+	reduceHealth.emit()
 	$Timer.start()
 	pass # Replace with function body.
 
 func _on_hitbox_body_exited(_body):
-	print("enemy exited, stopping timer")
 	$Timer.stop()
 	pass # Replace with function body.
 
 func _on_timer_timeout():
-	print("timer timeout")
 	currentHealth -= 10
 	reduceHealth.emit()
 	pass # Replace with function body.

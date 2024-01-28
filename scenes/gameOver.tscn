@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://5q7f7paqst7b"]
+[gd_scene load_steps=3 format=3 uid="uid://cfe41hyl1p8o7"]
 
 [ext_resource type="Script" path="res://scripts/gameOver.gd" id="1_payvx"]
 [ext_resource type="Texture2D" uid="uid://dmh66v6nsuv05" path="res://assets/failedLevel.jpg" id="2_28eyx"]
