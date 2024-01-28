@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bwgbubm8stj5c"
+path="res://.godot/imported/luffy.dialogue-60ae0a9e749029db2236426a83799325.tres"
+
+[deps]
+
+source_file="res://dialogue/luffy.dialogue"
+dest_files=["res://.godot/imported/luffy.dialogue-60ae0a9e749029db2236426a83799325.tres"]
+
+[params]
+
+defaults=true

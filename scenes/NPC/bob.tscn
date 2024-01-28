@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxjs60aslsxj2"]
+
+[ext_resource type="Texture2D" uid="uid://c2yvabngcmmwa" path="res://assets/bob.png" id="1_uiwp8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na6ge"]
+atlas = ExtResource("1_uiwp8")
+region = Rect2(16, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulo16"]
+atlas = ExtResource("1_uiwp8")
+region = Rect2(50, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_354le"]
+atlas = ExtResource("1_uiwp8")
+region = Rect2(84, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyg6q"]
+atlas = ExtResource("1_uiwp8")
+region = Rect2(118, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p77iy"]
+atlas = ExtResource("1_uiwp8")
+region = Rect2(152, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t8r2"]
+atlas = ExtResource("1_uiwp8")
+region = Rect2(186, 0, 34, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_887qd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na6ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulo16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_354le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyg6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p77iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t8r2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bob" type="AnimatedSprite2D"]
+scale = Vector2(0.882353, 0.888889)
+sprite_frames = SubResource("SpriteFrames_887qd")
+frame_progress = 0.611191

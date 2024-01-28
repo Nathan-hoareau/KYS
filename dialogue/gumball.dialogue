@@ -1,0 +1,11 @@
+~ start
+
+Jake: Quel est la mamie qui fait peur aux voleurs ?
+- Mamie traillette.
+	Gumball: Pas mal !
+	set point = 10
+- Eddy Malou.
+	Gumball: Je suis pas sûr !?
+	set point = -10
+
+=> END

@@ -1,55 +1,73 @@
+<<<<<<< HEAD
 [gd_scene load_steps=12 format=3 uid="uid://dygjlmh25mdmm"]
+=======
+[gd_scene load_steps=13 format=3 uid="uid://dygjlmh25mdmm"]
+>>>>>>> gael_map
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_s33gq"]
-[ext_resource type="Texture2D" uid="uid://u0v524dq2omc" path="res://assets/jake_sprite.png" id="2_811nh"]
+[ext_resource type="Texture2D" uid="uid://ccls0jlkbi80n" path="res://assets/3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Jake Overworld.png" id="2_6caha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ln2w"]
 size = Vector2(128, 126)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6mvls"]
-atlas = ExtResource("2_811nh")
-region = Rect2(128, 384, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_14hxk"]
+atlas = ExtResource("2_6caha")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ui5s"]
-atlas = ExtResource("2_811nh")
-region = Rect2(256, 384, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_io80l"]
+atlas = ExtResource("2_6caha")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tgf0d"]
-atlas = ExtResource("2_811nh")
-region = Rect2(384, 384, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f25x"]
+atlas = ExtResource("2_6caha")
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k3vq0"]
-atlas = ExtResource("2_811nh")
-region = Rect2(512, 384, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwgpc"]
+atlas = ExtResource("2_6caha")
+region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rlnw"]
-atlas = ExtResource("2_811nh")
-region = Rect2(640, 384, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fegwl"]
+atlas = ExtResource("2_6caha")
+region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdmvt"]
-atlas = ExtResource("2_811nh")
-region = Rect2(768, 384, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_riac7"]
+atlas = ExtResource("2_6caha")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxus6"]
+atlas = ExtResource("2_6caha")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x40aa"]
+atlas = ExtResource("2_6caha")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mhofb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6mvls")
+"texture": SubResource("AtlasTexture_14hxk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ui5s")
+"texture": SubResource("AtlasTexture_io80l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tgf0d")
+"texture": SubResource("AtlasTexture_2f25x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k3vq0")
+"texture": SubResource("AtlasTexture_iwgpc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8rlnw")
+"texture": SubResource("AtlasTexture_fegwl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fdmvt")
+"texture": SubResource("AtlasTexture_riac7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxus6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x40aa")
 }],
 "loop": true,
 "name": &"idle",
@@ -60,8 +78,13 @@ animations = [{
 radius = 98.5089
 
 [node name="Player" type="CharacterBody2D"]
+<<<<<<< HEAD
 position = Vector2(503, 243)
 collision_layer = 6
+=======
+position = Vector2(495, 244)
+collision_layer = 2
+>>>>>>> gael_map
 collision_mask = 2
 script = ExtResource("1_s33gq")
 
@@ -69,8 +92,11 @@ script = ExtResource("1_s33gq")
 shape = SubResource("RectangleShape2D_2ln2w")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.8147e-06, -0.5)
+scale = Vector2(4, 3.90625)
 sprite_frames = SubResource("SpriteFrames_mhofb")
 animation = &"idle"
+<<<<<<< HEAD
 frame = 2
 frame_progress = 0.977228
 
@@ -84,3 +110,6 @@ shape = SubResource("CircleShape2D_oh77y")
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+=======
+frame_progress = 0.198888
+>>>>>>> gael_map
