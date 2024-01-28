@@ -21,6 +21,3 @@ func update():
 	if value < 15:
 		sb.bg_color = Color("000000")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

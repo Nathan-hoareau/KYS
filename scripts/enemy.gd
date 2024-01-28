@@ -16,7 +16,7 @@ func _ready():
 			$Slime.play('front')
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player_chase:
 		position += (player.position - position)/speed
 
@@ -26,7 +26,7 @@ func _on_detection_box_body_entered(body):
 	player_chase = true
 
 
-func _on_detection_box_body_exited(body):
+func _on_detection_box_body_exited(_body):
 	player = null
 	player_chase = false
 

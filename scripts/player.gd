@@ -41,12 +41,12 @@ func _process(delta):
 	direction = direction.normalized() * (delta + .5)
 	move_and_collide(direction)
 
-func _on_hitbox_body_entered(body):
+func _on_hitbox_body_entered(_body):
 	print("enemy in box, starting timer")
 	$Timer.start()
 	pass # Replace with function body.
 
-func _on_hitbox_body_exited(body):
+func _on_hitbox_body_exited(_body):
 	print("enemy exited, stopping timer")
 	$Timer.stop()
 	pass # Replace with function body.
