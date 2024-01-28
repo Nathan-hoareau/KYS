@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnyhlqp0enthg"]
+
+[ext_resource type="Script" path="res://scripts/buttons.gd" id="1_pfotk"]
+[ext_resource type="FontFile" uid="uid://deqejhs8pglew" path="res://assets/shlop/shlop rg.otf" id="2_54h2f"]
+
+[node name="Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pfotk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 281.0
+offset_bottom = 75.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 281.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_54h2f")
+theme_override_font_sizes/font_size = 45

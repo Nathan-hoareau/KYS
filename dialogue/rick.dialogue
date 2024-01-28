@@ -1,0 +1,11 @@
+~ start
+
+Jake: Que fait un geek, quand il doit sortir du métro ?
+- Il va sur les rails.
+	Rick: Mouais, peux mieux faire !
+	set point = -10
+- Il libère la ram.
+	Rick: Pas mal, j'ai bien !
+	set point = 10
+
+=> END
